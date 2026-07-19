@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: mclaw-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: GROQ_KEYS
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: MAX_CONCURRENT
+        value: "3"
+      - key: FRONTEND_ORIGINS
+        value: "*"
+      - key: WORKSPACE_ROOT
+        value: "/tmp/mclaw_workspaces"
+      - key: GOOGLE_CSE_KEY
+        sync: false
+      - key: GOOGLE_CSE_ID
+        sync: false
